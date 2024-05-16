@@ -12,7 +12,7 @@ export default function Index() {
         </View>
 
         <View className="h-1/2 flex flex-col bg-white rounded-t-2xl px-4 w-full">
-          <View className="mt-10">
+          <View className="mt-5">
             <Text className="text-center text-2xl tracking-widest font-semibold">
               La santé proche {"\n"} de vous
             </Text>

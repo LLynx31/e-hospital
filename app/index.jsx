@@ -7,12 +7,12 @@ export default function Index() {
   return (
     <SafeAreaProvider>
       <View style={{paddingTop:inset.top}} className="flex flex-col h-screen  bg-blue-100">
-        <View  className="w-full h-1/2 flex items-center ">
-          <ImageBackground resizeMode="cover" className="w-full h-full" source={require('@/assets/images/onboard1.png')}></ImageBackground>
+        <View  className="w-screen h-1/2 flex items-center ">
+          <ImageBackground resizeMode="cover" className="w-screen h-full" source={require('@/assets/images/onboard1.png')}></ImageBackground>
         </View>
 
         <View className="h-1/2 flex flex-col bg-white rounded-t-2xl px-4 w-full">
-          <View className="mt-10">
+          <View className="mt-5">
             <Text className="text-center text-2xl tracking-widest font-semibold">
               La santé proche {"\n"} de vous
             </Text>

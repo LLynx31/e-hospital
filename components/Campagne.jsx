@@ -1,7 +1,8 @@
 import { Image, Text, View } from "react-native";
 
-export default function Campagne({image="../../assets/images/campagne/campgane1.png"}){
+
+export default function Campagne({image=""}){
     return(
-        <Image className="w-full h-[150px]" source={"../../assets/images/campagne/campgane1.png"}></Image>
+        <Image className="w-full h-[150px] rounded-lg" source={require("../assets/images/campagne/campagne1.png")}></Image>
     )
 }
