@@ -60,7 +60,7 @@ export default function Index() {
 
         <View className="mt-5 px-3 flex w-full flex-row bg-slate-200 rounded-md py-2">
           <View className="mr-2">
-            <Ionicons
+            <Ionicons onPress={() => router.push('(stack)/ListSearchMedecin')}
               name="search-outline"
               color={"#a1a1aa"}
               size={25}
@@ -164,7 +164,7 @@ export default function Index() {
         <View className="mt-5">
           <View className="flex flex-row items-center justify-between">
             <Text className="text-xl font-bold mb-2">Recents  <Text className="text-blue-500">Articles</Text></Text>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=> router.push('(stack)/ListArticles')}>
               <Text className="text-sm text-blue-500">voir plus</Text>
             </TouchableOpacity>
           </View>
