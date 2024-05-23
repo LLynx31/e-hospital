@@ -115,7 +115,7 @@ export default function Doctor() {
       <View className="h-[1px] mx-3 mt-5 bg-slate-200"></View>
 
       <View className="flex-row mt-5 mx-5 justify-around mb-[100px]">
-        <TouchableOpacity className="px-3 py-3 border rounded border-blue-500 ">
+        <TouchableOpacity onPress={()=>router.push('(stack)/PaiementRDV')} className="px-3 py-3 border rounded border-blue-500 ">
           <Text className="text-lg text-blue-500">Prendre Rendez-vous</Text>
         </TouchableOpacity>
 

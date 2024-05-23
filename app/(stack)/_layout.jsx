@@ -1,4 +1,6 @@
+import { Ionicons } from "@expo/vector-icons";
 import { Stack } from "expo-router";
+import { View } from "react-native";
 
 export default function StackLayout() {
   return (
@@ -16,6 +18,23 @@ export default function StackLayout() {
           presentation: "modal",
         }}
       />
+      <Stack.Screen
+        name="PaiementRDV"
+        options={{
+          // Set the presentation mode to modal for our modal route.
+          presentation: "modal",
+        }}
+      />
+
+      <Stack.Screen
+        name="DetailsRDV"
+        options={{
+          // Set the presentation mode to modal for our modal route.
+          presentation: "modal",
+        }}
+      />
+
+      
     </Stack>
   );
 }

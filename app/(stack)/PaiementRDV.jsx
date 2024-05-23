@@ -1,21 +1,24 @@
 import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import SearchDoctor from "../../components/SearchDoctor";
-import { SelectList } from "react-native-dropdown-select-list";
+import {
+  MultipleSelectList,
+  SelectList,
+} from "react-native-dropdown-select-list";
 import { useState } from "react";
 import CheckBox from "react-native-check-box";
 import { Alert } from "react-native";
 
-export default function Paiement() {
+export default function PaiementRDV() {
   const [selected, setSelected] = useState("");
 
   const data = [
-    { key: "1", value: "Consultation" },
-    { key: "2", value: "Other" },
-    { key: "3", value: "Other" },
+    { key: "1", value: "jeudi 15 mai 8h-9h" },
+    { key: "2", value: "jeudi 15 mai 9h-10h" },
+    { key: "3", value: "jeudi 15 mai 10h-11h" },
   ];
   return (
     <ScrollView className="px-5 my-5">
-      <Text className="font-bold text-lg mb-3 text-center text-blue-500">CONSULTATION</Text>
+      <Text className="font-bold text-lg mb-3 text-center text-blue-500">PRENDRE UN RENDEZ-VOUS</Text>
       <SearchDoctor
         lieu={"CHU treichville"}
         nom={"Akou"}
@@ -29,8 +32,8 @@ export default function Paiement() {
         <Text className="font text-base text-slate-400">Lundi 20 mai 2024</Text>
       </View>
       <View className="mt-5">
-        <Text className="font-bold text-lg mb-3">Type de Consultation</Text>
-        <SelectList
+        <Text className="font-bold text-lg mb-3">Selectionner le jour de rendez-vous</Text>
+        <MultipleSelectList
           inputStyles={{ fontSize: "16px" }}
           setSelected={(val) => setSelected(val)}
           data={data}
@@ -38,7 +41,7 @@ export default function Paiement() {
         />
       </View>
       <View className="mt-5">
-        <Text className="font-bold text-lg">Cout de la Consultation</Text>
+        <Text className="font-bold text-lg">Cout du rendez-vous</Text>
         <Text className="font text-base text-blue-400 font-bold">
           5000 FCFA
         </Text>
@@ -119,7 +122,9 @@ export default function Paiement() {
       </TouchableOpacity>
 
       <View className="py-3 bg-blue-500 rounded-md my-5">
-        <Text className="text-white text-base font-semibold text-center">Terminer</Text>
+        <Text className="text-white text-base font-semibold text-center">
+          Terminer
+        </Text>
       </View>
     </ScrollView>
   );
