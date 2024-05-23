@@ -8,10 +8,9 @@ import {
   TextInput,
   View,
   FlatList,
-  Button,
   TouchableOpacity,
 } from "react-native";
-import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
+import { SafeAreaView } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import ServiceCategorie from "../../components/ServiceCategorie";
 import TopDoctor from "../../components/TopDoctor";
@@ -22,10 +21,15 @@ export default function Index() {
   const [isConnected, setConneted] = useState(true);
   const user = "../../assets/images/user.png";
 
-
-  const listArticle = dataArticle.map( items => <Article key={items.id} date={items.date} titre={items.titre} tempsLecture={items.tempsLecteure} urlImg={items.urlImg} ></Article>)
-
-  const inset = useSafeAreaInsets()
+  const listArticle = dataArticle.map((items) => (
+    <Article
+      key={items.id}
+      date={items.date}
+      titre={items.titre}
+      tempsLecture={items.tempsLecteure}
+      urlImg={items.urlImg}
+    ></Article>
+  ));
 
   return (
     <SafeAreaView>
@@ -36,31 +40,50 @@ export default function Index() {
         {isConnected && (
           <View className="flex flex-row justify-between">
             <View>
-              <Text className="text-base">Bonjour, <Text className="text-blue-500 font-medium">Brou</Text></Text>
+              <Text className="text-base">
+                Bonjour, <Text className="text-blue-500 font-medium">Brou</Text>
+              </Text>
             </View>
 
-            {user ? (
-              <Image
-                className=" w-[50px] h-[50px] rounded-md"
-                source={require(user)}
-              ></Image>
-            ) : (
-              <Pressable onPress={() => Alert.alert("pressed")}>
-                <Ionicons name="person-circle" size={35}></Ionicons>
-              </Pressable>
-            )}
+            <View className="flex-row items-center">
+              {user ? (
+                <Image
+                  className=" w-[50px] h-[50px] rounded-md"
+                  source={require(user)}
+                ></Image>
+              ) : (
+                <Pressable onPress={() => Alert.alert("pressed")}>
+                  <Ionicons name="person-circle" size={35}></Ionicons>
+                </Pressable>
+              )}
+
+              <TouchableOpacity onPress={()=>router.push('(stack)/Notification')} className="ml-2 relative">
+                <Ionicons
+                  name="notifications"
+                  color={"#9ca3af"}
+                  size={25}
+                ></Ionicons>
+                <View className="rounded-lg w-[8px] absolute left-[15px] h-[8px] bg-blue-500">
+                  {/*<Text>
+
+            </Text>*/}
+                </View>
+              </TouchableOpacity>
+            </View>
           </View>
         )}
 
         <View>
           <Text className="font-bold tracking-wider text-2xl">
-            continuez de {"\n"}prendre soin de votre <Text className="text-blue-500 font-medium">santé</Text>
+            continuez de {"\n"}prendre soin de votre{" "}
+            <Text className="text-blue-500 font-medium">santé</Text>
           </Text>
         </View>
 
         <View className="mt-5 px-3 flex w-full flex-row bg-slate-200 rounded-md py-2">
           <View className="mr-2">
-            <Ionicons onPress={() => router.push('(stack)/ListSearchMedecin')}
+            <Ionicons
+              onPress={() => router.push("(stack)/ListSearchMedecin")}
               name="search-outline"
               color={"#a1a1aa"}
               size={25}
@@ -100,8 +123,8 @@ export default function Index() {
         ></FlatList>
 
         <Text className="text-xl font-bold mt-5 tracking-wider">
-        <Text className="text-blue-500">Campagne </Text>
-           de santé
+          <Text className="text-blue-500">Campagne </Text>
+          de santé
         </Text>
 
         <FlatList
@@ -128,9 +151,12 @@ export default function Index() {
         ></FlatList>
 
         <View className="flex flex-row items-center justify-between mt-5">
-          
-          <Text className="text-xl font-bold">Top  <Text className="text-blue-500">Docteur</Text></Text>
-          <TouchableOpacity onPress={()=>router.push("(stack)/ListTopMedecin")}>
+          <Text className="text-xl font-bold">
+            Top <Text className="text-blue-500">Docteur</Text>
+          </Text>
+          <TouchableOpacity
+            onPress={() => router.push("(stack)/ListTopMedecin")}
+          >
             <Text className="text-sm text-blue-500">voir plus</Text>
           </TouchableOpacity>
         </View>
@@ -163,8 +189,12 @@ export default function Index() {
 
         <View className="mt-5">
           <View className="flex flex-row items-center justify-between">
-            <Text className="text-xl font-bold mb-2">Recents  <Text className="text-blue-500">Articles</Text></Text>
-            <TouchableOpacity onPress={()=> router.push('(stack)/ListArticles')}>
+            <Text className="text-xl font-bold mb-2">
+              Recents <Text className="text-blue-500">Articles</Text>
+            </Text>
+            <TouchableOpacity
+              onPress={() => router.push("(stack)/ListArticles")}
+            >
               <Text className="text-sm text-blue-500">voir plus</Text>
             </TouchableOpacity>
           </View>
@@ -251,26 +281,27 @@ const dataTopDoctor = [
 
 const dataArticle = [
   {
-    urlImg:require("../../assets/images/article/article1.png"),
-    titre:"The 25 Healthiest Fruits You Can Eat, According to a Nutritionist",
-    tempsLecteure:"5min",
-    date:"12 mai, 2024",
-    id:"1"
+    urlImg: require("../../assets/images/article/article1.png"),
+    titre: "The 25 Healthiest Fruits You Can Eat, According to a Nutritionist",
+    tempsLecteure: "5min",
+    date: "12 mai, 2024",
+    id: "1",
   },
 
   {
-    urlImg:require("../../assets/images/article/article2.png"),
-    titre:"Traditional Herbal Medicine Treatments for COVID-19",
-    tempsLecteure:"10min",
-    date:"10 mai, 2024",
-    id:"2"
+    urlImg: require("../../assets/images/article/article2.png"),
+    titre: "Traditional Herbal Medicine Treatments for COVID-19",
+    tempsLecteure: "10min",
+    date: "10 mai, 2024",
+    id: "2",
   },
 
   {
-    urlImg:require("../../assets/images/article/article3.png"),
-    titre:"Beauty Tips For Face: 10 Dos and Don'ts for Naturally Beautiful Skin",
-    tempsLecteure:"9min",
-    date:"1 mai, 2024",
-    id:"3"
+    urlImg: require("../../assets/images/article/article3.png"),
+    titre:
+      "Beauty Tips For Face: 10 Dos and Don'ts for Naturally Beautiful Skin",
+    tempsLecteure: "9min",
+    date: "1 mai, 2024",
+    id: "3",
   },
-]
+];

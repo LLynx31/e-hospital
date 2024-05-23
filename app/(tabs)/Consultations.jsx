@@ -16,8 +16,8 @@ export default function Consultation() {
   return (
     <SafeAreaView>
       <View className="my-5 mx-5">
-        <Text className="text-2xl font-bold text-center text-blue-500">
-          Mes Consultation
+        <Text className="text-xl font-bold text-center text-blue-500">
+          Mes Consultations
         </Text>
       </View>
       <View className="w-full h-[0.1px] "></View>

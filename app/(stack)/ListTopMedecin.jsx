@@ -25,6 +25,7 @@ export default function ListTopMedecin() {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <FlatList
+      ListFooterComponent={<View className="mb-[150px]"></View>}
         data={dataMedecin}
         renderItem={renderItem}
         keyExtractor={item => item.nom}

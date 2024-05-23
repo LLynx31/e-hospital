@@ -11,7 +11,6 @@ import { SafeAreaView } from "react-native";
 import Article from "../../components/Article";
 
 export default function ListArticles() {
-
   const renderItem = ({ item }) => (
     <Article
       key={item.id}
@@ -27,8 +26,9 @@ export default function ListArticles() {
       <FlatList
         data={dataArticle}
         renderItem={renderItem}
-        keyExtractor={item => item.id}
+        keyExtractor={(item) => item.id}
         showsVerticalScrollIndicator={false}
+        ListFooterComponent={<View className="mb-[150px]"></View>}
         contentContainerStyle={{ paddingHorizontal: 20, paddingTop: 10 }}
         ListHeaderComponent={
           <>
@@ -38,7 +38,10 @@ export default function ListArticles() {
               </TouchableOpacity>
 
               <View>
-                <Text className="text-xl text-center font-bold"> Articles </Text>
+                <Text className="text-xl text-center font-bold">
+                  {" "}
+                  Articles{" "}
+                </Text>
               </View>
 
               <TouchableOpacity onPress={() => router.back()}>
@@ -62,7 +65,9 @@ export default function ListArticles() {
             </View>
 
             <View>
-              <Text className="text-xl font-semibold mt-5">Derniers ajouts</Text>
+              <Text className="text-xl font-semibold mt-5">
+                Derniers ajouts
+              </Text>
               <FlatList
                 className="my-2 rounded-lg"
                 showsHorizontalScrollIndicator={false}
@@ -116,7 +121,8 @@ const dataArticle = [
   },
   {
     urlImg: require("../../assets/images/article/article3.png"),
-    titre: "Beauty Tips For Face: 10 Dos and Don'ts for Naturally Beautiful Skin",
+    titre:
+      "Beauty Tips For Face: 10 Dos and Don'ts for Naturally Beautiful Skin",
     tempsLecteure: "9min",
     date: "1 mai, 2024",
     id: "3",

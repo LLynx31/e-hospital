@@ -1,16 +1,10 @@
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
-import {
-  FlatList,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { FlatList, Text, TouchableOpacity, View } from "react-native";
 import SearchDoctor from "../../components/SearchDoctor";
 import { SafeAreaView } from "react-native";
 
 export default function ListMedecinSpecialite() {
-
   const renderItem = ({ item }) => (
     <SearchDoctor
       lieu={item.lieu}
@@ -27,8 +21,9 @@ export default function ListMedecinSpecialite() {
       <FlatList
         data={dataMedecin}
         renderItem={renderItem}
-        keyExtractor={item => item.nom}
+        keyExtractor={(item) => item.nom}
         showsVerticalScrollIndicator={false}
+        ListFooterComponent={<View className="mb-[150px]"></View>}
         contentContainerStyle={{ paddingHorizontal: 20, paddingTop: 10 }}
         ListHeaderComponent={
           <View className="flex flex-row mb-5 justify-between items-center">
@@ -37,7 +32,10 @@ export default function ListMedecinSpecialite() {
             </TouchableOpacity>
 
             <View>
-              <Text className="text-xl text-center font-bold"> Généraliste </Text>
+              <Text className="text-xl text-center font-bold">
+                {" "}
+                Généraliste{" "}
+              </Text>
             </View>
 
             <TouchableOpacity onPress={() => router.back()}>
@@ -57,7 +55,7 @@ const dataMedecin = [
     prenom: "Serge",
     specialite: "Généraliste",
     note: "4.9",
-    lieu:'CHU cocody',
+    lieu: "CHU cocody",
   },
   {
     urlImg: require("../../assets/images/topDoctor/top2.png"),
@@ -65,7 +63,7 @@ const dataMedecin = [
     prenom: "Sylvestre",
     specialite: "Dentiste",
     note: "4.8",
-    lieu:'CHU treichville',
+    lieu: "CHU treichville",
   },
   {
     urlImg: require("../../assets/images/topDoctor/top3.png"),
@@ -73,7 +71,7 @@ const dataMedecin = [
     prenom: "Esther",
     specialite: "Dermatologue",
     note: "4.7",
-    lieu:'PMI plateau',
+    lieu: "PMI plateau",
   },
   {
     urlImg: require("../../assets/images/topDoctor/top4.png"),
@@ -81,7 +79,7 @@ const dataMedecin = [
     prenom: "Myriam",
     specialite: "Cardiologue",
     note: "4.1",
-    lieu:'PMI marcory',
+    lieu: "PMI marcory",
   },
   {
     urlImg: require("../../assets/images/topDoctor/top5.png"),
@@ -89,6 +87,6 @@ const dataMedecin = [
     prenom: "Cerise",
     specialite: "ORL",
     note: "4.0",
-    lieu:'hopital koummassi',
+    lieu: "hopital koummassi",
   },
 ];

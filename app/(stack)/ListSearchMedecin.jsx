@@ -11,7 +11,6 @@ import SearchDoctor from "../../components/SearchDoctor";
 import { SafeAreaView } from "react-native";
 
 export default function ListSearchMedecin() {
-
   const renderItem = ({ item }) => (
     <SearchDoctor
       lieu={item.lieu}
@@ -27,8 +26,9 @@ export default function ListSearchMedecin() {
     <SafeAreaView style={{ flex: 1 }}>
       <FlatList
         data={dataMedecin}
+        ListFooterComponent={<View className="mb-[150px]"></View>}
         renderItem={renderItem}
-        keyExtractor={item => item.nom}
+        keyExtractor={(item) => item.nom}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingHorizontal: 20, paddingTop: 10 }}
         ListHeaderComponent={
@@ -39,7 +39,10 @@ export default function ListSearchMedecin() {
               </TouchableOpacity>
 
               <View>
-                <Text className="text-xl text-center font-bold"> Recherche </Text>
+                <Text className="text-xl text-center font-bold">
+                  {" "}
+                  Recherche{" "}
+                </Text>
               </View>
               <TouchableOpacity onPress={() => router.back()}>
                 <Ionicons size={30} name="filter" />

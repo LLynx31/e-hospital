@@ -5,48 +5,61 @@ import { StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { Dimensions } from "react-native";
 import { router } from "expo-router";
+import { FlatList } from "react-native";
 
-const { height, width } = Dimensions. get("window")
+const { height, width } = Dimensions.get("window");
 export default function Urgence() {
-  const listUrgences = dataUrgence.map((item) => (
+  const renderItem = ({ item }) => (
     <ItemsUrgence
       date={item.date}
       message={item.message}
       user={item.user}
       key={item.id}
     ></ItemsUrgence>
-  ));
-
+  );
 
   return (
     <SafeAreaView>
-      <ScrollView showsVerticalScrollIndicator={false} className="px-5 pt-3 h-screen w-screen">
-        <View className="flex flex-row  justify-center items-center">
-          <View className="">
-            <Text className="text-xl text-red-500 text-center font-bold">
-              {" "}
-              Urgences{" "}
-            </Text>
-          </View>
-        </View>
+      
+        <FlatList
+          className="h-screen px-5 pt-5"
+          keyExtractor={(item) => item.id}
+          showsVerticalScrollIndicator={false}
+          data={dataUrgence}
+          renderItem={renderItem}
+          ListFooterComponent={<View className="mb-[150px]"></View>}
+          ListHeaderComponent={
+            <View className="flex flex-row mb-5  items-center">
+              <TouchableOpacity
+                className="basis-1/4"
+                onPress={() => router.back()}
+              >
+                <Ionicons size={30} name="arrow-back" />
+              </TouchableOpacity>
 
-        <View className="my-6 w-[250px] ">
-          <Text className="text-lg font-medium text-gray-500">Urgence</Text>
-          <Text className="text-base text-gray-500">
-            <View className="gap-3"></View>
-            Retrouvez ici les personnes qui ont une situation assez urgentes
-          </Text>
-        </View>
-        {listUrgences}
+              <View className="basis-1/2">
+                <Text className="text-xl text-center text-red-500 font-bold">
+                  Urgences
+                </Text>
+              </View>
 
-        <View className="h-[150px]"></View>
-      </ScrollView>
-      <TouchableOpacity
-          style={styles.fab}
-          onPress={() => router.push('(stack)/MakeUrgence')}
+              <View className="wbasis-1/4" />
+            </View>
+          }
         >
-          <Ionicons name="add" size={24} color="white" />
-        </TouchableOpacity>
+          
+        </FlatList>
+        
+
+
+      <TouchableOpacity
+        style={styles.fab}
+        onPress={() => router.push("(stack)/MakeUrgence")}
+      >
+        <Ionicons name="add" size={24} color="white" />
+      </TouchableOpacity>
+
+      
     </SafeAreaView>
   );
 }
