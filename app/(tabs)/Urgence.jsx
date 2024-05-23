@@ -23,7 +23,7 @@ export default function Urgence() {
       <ScrollView className="px-5 pt-3 h-screen w-screen">
         <View className="flex flex-row  justify-center items-center">
           <View className="">
-            <Text className="text-xl text-blue-500 text-center font-bold">
+            <Text className="text-xl text-red-500 text-center font-bold">
               {" "}
               Urgences{" "}
             </Text>
@@ -43,7 +43,7 @@ export default function Urgence() {
       </ScrollView>
       <TouchableOpacity
           style={styles.fab}
-          onPress={() => router.push('(tabs)/(stack)/MakeUrgence')}
+          onPress={() => router.push('(stack)/MakeUrgence')}
         >
           <Ionicons name="add" size={24} color="white" />
         </TouchableOpacity>
