@@ -1,64 +1,72 @@
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
 import {
-  ScrollView,
+  FlatList,
   Text,
   TextInput,
   TouchableOpacity,
   View,
 } from "react-native";
 import SearchDoctor from "../../components/SearchDoctor";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaView } from "react-native";
 
 export default function ListSearchMedecin() {
-  const listMedecin = dataMedecin.map((item) => (
+
+  const renderItem = ({ item }) => (
     <SearchDoctor
       lieu={item.lieu}
-      key={item.nom}
       nom={item.nom}
       note={item.note}
       specialite={item.specialite}
       prenom={item.prenom}
       urlImg={item.urlImg}
-    ></SearchDoctor>
-  ));
+    />
+  );
 
   return (
-    <SafeAreaView>
-      <ScrollView showsVerticalScrollIndicator={false} className="px-5 w-screen mt-1 h-screen">
-        <View className="flex flex-row mb-5 justify-between items-center">
-          <TouchableOpacity className="" onPress={() => router.back()}>
-            <Ionicons size={30} name="arrow-back"></Ionicons>
-          </TouchableOpacity>
+    <SafeAreaView style={{ flex: 1 }}>
+      <FlatList
+        data={dataMedecin}
+        renderItem={renderItem}
+        keyExtractor={item => item.nom}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingHorizontal: 20, paddingTop: 10 }}
+        ListHeaderComponent={
+          <>
+            <View className="flex flex-row mb-5 justify-between items-center">
+              <TouchableOpacity onPress={() => router.back()}>
+                <Ionicons size={30} name="arrow-back" />
+              </TouchableOpacity>
 
-          <View className="">
-            <Text className="text-xl text-center font-bold"> Recherche </Text>
-          </View>
-          <TouchableOpacity className="" onPress={() => router.back()}>
-            <Ionicons size={30} name="filter"></Ionicons>
-          </TouchableOpacity>
-        </View>
-        <View className="mt-3 px-3 flex w-full flex-row bg-slate-200 rounded-md py-2">
-          <View className="mr-2">
-            <Ionicons
-              onPress={() => router.push("(stack)/ListSearchMedecin")}
-              name="search-outline"
-              color={"#a1a1aa"}
-              size={25}
-            ></Ionicons>
-          </View>
-          <TextInput
-            className="w-full"
-            placeholder="entre le nom ou le prenom d'un medecin"
-          ></TextInput>
-        </View>
-        <View>
-          <Text className="text-base font-semibold mt-5">
-            Recherche pour " <Text className="font-bold">Dr Konate</Text> "
-          </Text>
-        </View>
-        {listMedecin}
-      </ScrollView>
+              <View>
+                <Text className="text-xl text-center font-bold"> Recherche </Text>
+              </View>
+              <TouchableOpacity onPress={() => router.back()}>
+                <Ionicons size={30} name="filter" />
+              </TouchableOpacity>
+            </View>
+            <View className="mt-3 px-3 flex w-full flex-row bg-slate-200 rounded-md py-2">
+              <View className="mr-2">
+                <Ionicons
+                  onPress={() => router.push("(stack)/ListSearchMedecin")}
+                  name="search-outline"
+                  color={"#a1a1aa"}
+                  size={25}
+                />
+              </View>
+              <TextInput
+                className="w-full"
+                placeholder="entre le nom ou le prénom d'un médecin"
+              />
+            </View>
+            <View>
+              <Text className="text-base font-semibold mt-5">
+                Recherche pour "<Text className="font-bold">Dr Konate</Text>"
+              </Text>
+            </View>
+          </>
+        }
+      />
     </SafeAreaView>
   );
 }
@@ -102,6 +110,6 @@ const dataMedecin = [
     prenom: "Cerise",
     specialite: "ORL",
     note: "4.0",
-    lieu: "hopital koummassi",
+    lieu: "hôpital koummassi",
   },
 ];

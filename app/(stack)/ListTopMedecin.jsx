@@ -1,45 +1,51 @@
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
 import {
-  ScrollView,
+  FlatList,
   Text,
   TouchableOpacity,
   View,
 } from "react-native";
 import SearchDoctor from "../../components/SearchDoctor";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaView } from "react-native";
 
 export default function ListTopMedecin() {
-  const listMedecin = dataMedecin.map((item) => (
+
+  const renderItem = ({ item }) => (
     <SearchDoctor
       lieu={item.lieu}
-      key={item.nom}
       nom={item.nom}
       note={item.note}
       specialite={item.specialite}
       prenom={item.prenom}
       urlImg={item.urlImg}
-    ></SearchDoctor>
-  ));
+    />
+  );
 
   return (
-    <SafeAreaView>
-      <ScrollView showsVerticalScrollIndicator={false} className="px-5 w-screen mt-1 h-screen">
-        <View className="flex flex-row mb-5 items-center">
-          <View className="basis-1/4">
-            <TouchableOpacity className="" onPress={() => router.back()}>
-              <Ionicons size={30} name="arrow-back"></Ionicons>
-            </TouchableOpacity>
-          </View>
+    <SafeAreaView style={{ flex: 1 }}>
+      <FlatList
+        data={dataMedecin}
+        renderItem={renderItem}
+        keyExtractor={item => item.nom}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingHorizontal: 20, paddingTop: 10 }}
+        ListHeaderComponent={
+          <View className="flex flex-row mb-5 items-center">
+            <View className="basis-1/4">
+              <TouchableOpacity onPress={() => router.back()}>
+                <Ionicons size={30} name="arrow-back" />
+              </TouchableOpacity>
+            </View>
 
-          <View className="basis-1/2">
-            <Text className="text-xl text-center font-bold"> Top Docteur </Text>
-          </View>
+            <View className="basis-1/2">
+              <Text className="text-xl text-center font-bold">Top Docteur</Text>
+            </View>
 
-          <View className="basis-1/4"></View>
-        </View>
-        {listMedecin}
-      </ScrollView>
+            <View className="basis-1/4"></View>
+          </View>
+        }
+      />
     </SafeAreaView>
   );
 }

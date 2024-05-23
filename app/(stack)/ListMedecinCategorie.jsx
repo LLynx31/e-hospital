@@ -1,36 +1,51 @@
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
 import {
-  ScrollView,
+  FlatList,
   Text,
   TouchableOpacity,
   View,
 } from "react-native";
 import SearchDoctor from "../../components/SearchDoctor";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaView } from "react-native";
 
-export default function ListMedecinspecialite() {
+export default function ListMedecinSpecialite() {
 
-    const listMedecin = dataMedecin.map(item => <SearchDoctor lieu={item.lieu} key={item.nom} nom={item.nom} note={item.note} specialite={item.specialite} prenom={item.prenom} urlImg={item.urlImg}></SearchDoctor>)
+  const renderItem = ({ item }) => (
+    <SearchDoctor
+      lieu={item.lieu}
+      nom={item.nom}
+      note={item.note}
+      specialite={item.specialite}
+      prenom={item.prenom}
+      urlImg={item.urlImg}
+    />
+  );
 
   return (
-    <SafeAreaView>
-      <ScrollView showsVerticalScrollIndicator={false} className="px-5 w-screen mt-1 h-screen">
-        <View className="flex flex-row mb-5 justify-between items-center">
-          <TouchableOpacity className="" onPress={() => router.back()}>
-            <Ionicons size={30} name="arrow-back"></Ionicons>
-          </TouchableOpacity>
+    <SafeAreaView style={{ flex: 1 }}>
+      <FlatList
+        data={dataMedecin}
+        renderItem={renderItem}
+        keyExtractor={item => item.nom}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingHorizontal: 20, paddingTop: 10 }}
+        ListHeaderComponent={
+          <View className="flex flex-row mb-5 justify-between items-center">
+            <TouchableOpacity onPress={() => router.back()}>
+              <Ionicons size={30} name="arrow-back" />
+            </TouchableOpacity>
 
-          <View className="">
-            <Text className="text-xl text-center font-bold"> Généraliste </Text>
+            <View>
+              <Text className="text-xl text-center font-bold"> Généraliste </Text>
+            </View>
+
+            <TouchableOpacity onPress={() => router.back()}>
+              <Ionicons size={30} name="filter" />
+            </TouchableOpacity>
           </View>
-
-          <TouchableOpacity className="" onPress={() => router.back()}>
-            <Ionicons size={30} name="filter"></Ionicons>
-          </TouchableOpacity>
-        </View>
-        {listMedecin}
-      </ScrollView>
+        }
+      />
     </SafeAreaView>
   );
 }
@@ -47,7 +62,7 @@ const dataMedecin = [
   {
     urlImg: require("../../assets/images/topDoctor/top2.png"),
     nom: "Akichi",
-    prenom: "Sylsvestre",
+    prenom: "Sylvestre",
     specialite: "Dentiste",
     note: "4.8",
     lieu:'CHU treichville',
