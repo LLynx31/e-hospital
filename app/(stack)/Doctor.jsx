@@ -11,7 +11,7 @@ import {
 
 export default function Doctor() {
   return (
-    <ScrollView className="w-screen h-screen">
+    <ScrollView showsVerticalScrollIndicator={false} className="w-screen h-screen">
       <TouchableOpacity
         className="absolute z-10 top-[40px] left-[15px]"
         onPress={() => router.back()}

@@ -7,7 +7,7 @@ import { ScrollView, Text, View } from "react-native";
 export default function Index() {
   return (
     <SafeAreaView>
-      <ScrollView className="px-5 gap-5">
+      <ScrollView showsVerticalScrollIndicator={false} className="px-5 gap-5">
         <View className="flex flex-row  justify-center items-center">
           <View className="">
             <Text className="text-xl text-blue-500 text-center font-bold">

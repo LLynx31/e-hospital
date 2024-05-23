@@ -17,7 +17,7 @@ export default function ListArticles() {
   const listArticle = dataArticle.map( items => <Article key={items.id} date={items.date} titre={items.titre} tempsLecture={items.tempsLecteure} urlImg={items.urlImg} ></Article>)
   return (
     <SafeAreaView>
-      <ScrollView className="px-5 w-screen mt-1 h-screen ">
+      <ScrollView showsVerticalScrollIndicator={false} className="px-5 w-screen mt-1 h-screen ">
         <View className="flex flex-row mb-5 justify-between items-center">
           <TouchableOpacity className="" onPress={() => router.back()}>
             <Ionicons size={30} name="arrow-back"></Ionicons>

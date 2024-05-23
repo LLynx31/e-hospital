@@ -14,7 +14,7 @@ export default function Paiement() {
     { key: "3", value: "Other" },
   ];
   return (
-    <ScrollView className="px-5 my-5">
+    <ScrollView showsVerticalScrollIndicator={false} className="px-5 my-5">
       <Text className="font-bold text-lg mb-3 text-center text-blue-500">CONSULTATION</Text>
       <SearchDoctor
         lieu={"CHU treichville"}

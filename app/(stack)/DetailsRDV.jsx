@@ -21,7 +21,7 @@ export default function DetailsRDV() {
   ];
   return (
     <SafeAreaView>
-      <ScrollView className="px-5 my-5">
+      <ScrollView showsVerticalScrollIndicator={false} className="px-5 my-5">
         <View className="flex flex-row mb-5 items-center">
           <TouchableOpacity className="basis-1/4" onPress={() => router.back()}>
             <Ionicons size={30} name="arrow-back"></Ionicons>

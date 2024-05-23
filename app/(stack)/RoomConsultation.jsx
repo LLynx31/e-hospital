@@ -58,7 +58,7 @@ export default function RoomConsultation() {
         keyboardVerticalOffset={Platform.OS === "ios" ? 90 : 0}
       >
         <View style={{ flex: 1 }}>
-          <ScrollView contentContainerStyle={{ flexGrow: 1 }} className="px-5">
+          <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ flexGrow: 1 }} className="px-5">
             {listChat}
           </ScrollView>
           <View className="flex-row border-t py-2 px-2 justify-between bg-white border-t-gray-300">

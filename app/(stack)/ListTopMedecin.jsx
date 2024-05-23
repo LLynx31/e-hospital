@@ -24,7 +24,7 @@ export default function ListTopMedecin() {
 
   return (
     <SafeAreaView>
-      <ScrollView className="px-5 w-screen mt-1 h-screen">
+      <ScrollView showsVerticalScrollIndicator={false} className="px-5 w-screen mt-1 h-screen">
         <View className="flex flex-row mb-5 items-center">
           <View className="basis-1/4">
             <TouchableOpacity className="" onPress={() => router.back()}>

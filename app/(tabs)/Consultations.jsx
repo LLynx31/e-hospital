@@ -21,7 +21,7 @@ export default function Consultation() {
         </Text>
       </View>
       <View className="w-full h-[0.1px] "></View>
-      <ScrollView className="h-screen w-screen">
+      <ScrollView showsVerticalScrollIndicator={false} className="h-screen w-screen">
         {/*<View className=" px-3 flex w-[310px] mb-8 mx-auto flex-row bg-slate-200 rounded-md py-2">
           <View className="mr-2">
             <Ionicons

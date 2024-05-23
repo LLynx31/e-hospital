@@ -20,7 +20,7 @@ export default function Urgence() {
 
   return (
     <SafeAreaView>
-      <ScrollView className="px-5 pt-3 h-screen w-screen">
+      <ScrollView showsVerticalScrollIndicator={false} className="px-5 pt-3 h-screen w-screen">
         <View className="flex flex-row  justify-center items-center">
           <View className="">
             <Text className="text-xl text-red-500 text-center font-bold">

@@ -4,7 +4,7 @@ import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 
 export default function Article() {
   return (
-    <ScrollView className="h-screen w-screen relative">
+    <ScrollView showsVerticalScrollIndicator={false} className="h-screen w-screen relative">
         <TouchableOpacity className="absolute z-10 top-[40px] left-[15px]" onPress={() => router.back()}>
             <Ionicons size={30} name="arrow-back"></Ionicons>
           </TouchableOpacity>
