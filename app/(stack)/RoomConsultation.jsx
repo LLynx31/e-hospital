@@ -2,6 +2,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { router, Stack } from "expo-router";
 import {
   Alert,
+  FlatList,
   KeyboardAvoidingView,
   Platform,
   TextInput,
@@ -55,16 +56,19 @@ export default function RoomConsultation() {
       <KeyboardAvoidingView
         style={{ flex: 1 }}
         behavior={Platform.OS === "ios" && "padding"}
-        keyboardVerticalOffset={Platform.OS === "ios" && 90 }
+        keyboardVerticalOffset={Platform.OS === "ios" && 90}
       >
         <View style={{ flex: 1 }}>
-          <ScrollView
-            showsVerticalScrollIndicator={false}
-            contentContainerStyle={{ flexGrow: 1 }}
+          <FlatList
             className="px-5"
-          >
-            {listChat}
-          </ScrollView>
+            data={dataMessage}
+            keyExtractor={(item) => item.id}
+            renderItem={({ item }) => (
+              <Chat key={item.id} user={item.user} message={item.message} />
+            )}
+            contentContainerStyle={{ paddingHorizontal: 5 }}
+            showsVerticalScrollIndicator={false}
+          />
           <View className="flex-row border-t py-2 px-2 justify-between bg-white border-t-gray-300">
             <TextInput
               multiline
