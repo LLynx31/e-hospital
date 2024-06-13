@@ -61,7 +61,7 @@ const dataMedecin = [
     urlImg: require("../../assets/images/topDoctor/top2.png"),
     nom: "Akichi",
     prenom: "Sylvestre",
-    specialite: "Dentiste",
+    specialite: "Généraliste",
     note: "4.8",
     lieu: "CHU treichville",
   },

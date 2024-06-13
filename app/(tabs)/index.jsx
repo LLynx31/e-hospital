@@ -221,23 +221,19 @@ const dataServiceCategorie = [
   },
   {
     urlImg: "https://cdn-icons-png.flaticon.com/128/13515/13515135.png",
-    nom: "généraliste",
+    nom: "Dermato",
   },
   {
     urlImg: "https://cdn-icons-png.flaticon.com/128/13515/13515135.png",
-    nom: "généraliste",
+    nom: "Cardiologue",
   },
   {
     urlImg: "https://cdn-icons-png.flaticon.com/128/13515/13515135.png",
-    nom: "généraliste",
+    nom: "Cardiologue",
   },
   {
     urlImg: "https://cdn-icons-png.flaticon.com/128/13515/13515135.png",
-    nom: "généraliste",
-  },
-  {
-    urlImg: "https://cdn-icons-png.flaticon.com/128/13515/13515135.png",
-    nom: "généraliste",
+    nom: "ORL",
   },
 ];
 
@@ -246,14 +242,14 @@ const dataTopDoctor = [
     urlImg: require("../../assets/images/topDoctor/top1.png"),
     nom: "Akou",
     prenom: "Serge",
-    categorie: "généraliste",
+    categorie: "Généraliste",
     note: "4.9",
   },
   {
     urlImg: require("../../assets/images/topDoctor/top2.png"),
     nom: "Akichi",
     prenom: "Sylsvestre",
-    categorie: "Dentiste",
+    categorie: "Généraliste",
     note: "4.8",
   },
   {

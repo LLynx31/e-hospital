@@ -18,10 +18,10 @@ export default function Paiement() {
       <Text className="font-bold text-lg mb-3 text-center text-blue-500">CONSULTATION</Text>
       <SearchDoctor
         lieu={"CHU treichville"}
-        nom={"Akou"}
-        prenom={"Serge"}
+        nom={"Akichi"}
+        prenom={"Sylsvestre"}
         note={"4.8"}
-        specialite={"Cardiologue"}
+        specialite={"Généraliste"}
         urlImg={require("../../assets/images/topDoctor/top2.png")}
       ></SearchDoctor>
       <View className="mt-5">

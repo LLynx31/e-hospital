@@ -45,9 +45,9 @@ export default function Consultation() {
 const dataConsultation = [
   {
     id:'1',
-    nomDoctor: "Attoh",
-    prenomDoctor: "Syntiche",
-    photoDoctor: require("../../assets/images/topDoctor/top4.png"),
+    nomDoctor: "Akichi",
+    prenomDoctor: "Sylsvestre",
+    photoDoctor: require("../../assets/images/topDoctor/top2.png"),
     lastMessage: "Merci beau à la prochaine",
     lastMessageHours: "11:52",
     newMessage: "1",

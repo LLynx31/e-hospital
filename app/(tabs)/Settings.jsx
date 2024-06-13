@@ -23,7 +23,7 @@ export default function Tab() {
           className="w-[100px] h-[100px] rounded-lg"
           source={require("../../assets/images/user.png")}
         ></Image>
-        <Text className="mt-3 text-lg font-semibold">Brou Pacome</Text>
+        <Text className="mt-3 text-lg font-semibold">Brou Serge</Text>
         <Text className="mt-2 text-sm">+225 0759150683</Text>
       </View>
       <View

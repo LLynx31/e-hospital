@@ -43,7 +43,7 @@ export default function Index() {
             ></Image>
 
             <View className="justify-between">
-              <Text className="text-sm font-medium">Akou Serge</Text>
+              <Text className="text-sm font-medium">Akichi Sylsvestre</Text>
               <Text className="text-sm font-light">Cardiologue</Text>
               <View className="px-2 bg-amber-100 flex items-center flex-row my-2 p-1 w-[50px] rounded">
                 <Ionicons name="star" color={"#FBBF24"}></Ionicons>
@@ -96,7 +96,7 @@ export default function Index() {
             ></Image>
 
             <View className="justify-between">
-              <Text className="text-sm font-medium">Akou Serge</Text>
+              <Text className="text-sm font-medium">Akichi Sylsvestre</Text>
               <Text className="text-sm font-light">Cardiologue</Text>
               <View className="px-2 bg-amber-100 flex items-center flex-row my-2 p-1 w-[50px] rounded">
                 <Ionicons name="star" color={"#FBBF24"}></Ionicons>

@@ -21,8 +21,8 @@ export default function PaiementRDV() {
       <Text className="font-bold text-lg mb-3 text-center text-blue-500">PRENDRE UN RENDEZ-VOUS</Text>
       <SearchDoctor
         lieu={"CHU treichville"}
-        nom={"Akou"}
-        prenom={"Serge"}
+        nom={"Akichi"}
+        prenom={"Sylsvestre"}
         note={"4.8"}
         specialite={"Cardiologue"}
         urlImg={require("../../assets/images/topDoctor/top2.png")}

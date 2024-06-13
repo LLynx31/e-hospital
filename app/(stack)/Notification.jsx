@@ -12,11 +12,8 @@ import { router } from "expo-router";
 
 export default function Notification() {
   const notifications = [
-    { id: "1", message: "Votre commande vient d'arriver au point de retrait" },
-    { id: "2", message: "Votre commande vient d'arriver au point de retrait" },
-    { id: "3", message: "Votre commande vient d'arriver au point de retrait" },
-    { id: "4", message: "Votre commande vient d'arriver au point de retrait" },
-    { id: "5", message: "Votre commande vient d'arriver au point de retrait" },
+    { id: "1", message: "Votre paiement a bien été enregistré, vous pouvez démarrer la consultation." },
+
   ];
 
   const renderItem = ({ item }) => (

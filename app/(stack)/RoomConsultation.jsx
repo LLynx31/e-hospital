@@ -36,9 +36,9 @@ export default function RoomConsultation() {
               </TouchableOpacity>
               <Image
                 className="w-[35px] h-[35px] rounded-full"
-                source={require("../../assets/images/topDoctor/top5.png")}
+                source={require("../../assets/images/topDoctor/top2.png")}
               />
-              <Text className="text-base font-medium">Dr. Attoh Syntiche</Text>
+              <Text className="text-base font-medium">Dr. Akichi Sylvestre</Text>
             </View>
           ),
           headerRight: () => (
@@ -102,9 +102,9 @@ const dataMessage = [
   {
     id: "1",
     user: {
-      nom: "Attoh",
-      prenom: "Syntiche",
-      photo: require("../../assets/images/topDoctor/top5.png"),
+      nom: "Akichi",
+      prenom: "Sylvestre",
+      photo: require("../../assets/images/topDoctor/top2.png"),
     },
     message: {
       text: "Bonjour comment puis je vous aidez ?",
@@ -123,12 +123,12 @@ const dataMessage = [
   {
     id: "3",
     user: {
-      nom: "Attoh",
-      prenom: "Syntiche",
-      photo: require("../../assets/images/topDoctor/top5.png"),
+      nom: "Akichi",
+      prenom: "Sylvestre",
+      photo: require("../../assets/images/topDoctor/top2.png"),
     },
     message: {
-      text: "Cela a commencé quand ",
+      text: "Cela a commencé quand ?",
       heure: "11:16",
     },
   },
@@ -136,7 +136,7 @@ const dataMessage = [
   {
     id: "4",
     message: {
-      text: "Depuis hier",
+      text: "Hier soir",
       heure: "11:15",
     },
   },

@@ -26,8 +26,8 @@ export default function Doctor() {
       </View>
       <View className="mt-5 mx-5 flex-row justify-between">
         <View>
-          <Text className="text-2xl font-bold">Akou Serge</Text>
-          <Text className="text-base mt-1">Cardiologue</Text>
+          <Text className="text-2xl font-bold">Dr. Akichi Sylsvestre</Text>
+          <Text className="text-base mt-1">Généraliste</Text>
           <View className="flex flex-row mt-2 items-center">
             <View className="">
               <Text className="font-medium">CHU treichville</Text>
